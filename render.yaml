@@ -3,7 +3,7 @@ services:
     name: openwa-api
     runtime: docker
     dockerfilePath: ./Dockerfile
-    plan: free
+    plan: starter
     healthCheckPath: /api/health
     envVars:
       - key: NODE_ENV
@@ -37,7 +37,7 @@ services:
     buildCommand: npm install --legacy-peer-deps && npm run build
     staticPublishPath: ./dist
     rootDir: dashboard
-    plan: free
+    plan: starter
     envVars:
       - key: VITE_API_URL
         fromService:
